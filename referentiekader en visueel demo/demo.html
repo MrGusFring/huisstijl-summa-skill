@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Summa Huisstijl Demo</title>
+    <link rel="stylesheet" href="summa-styles.css">
+    <style>
+        /* Demo-specifieke styling */
+        .demo-section {
+            margin-bottom: var(--space-16);
+        }
+
+        .demo-heading {
+            font-size: var(--text-2xl);
+            margin-bottom: var(--space-8);
+            padding-bottom: var(--space-4);
+            border-bottom: 3px solid var(--summa-indigo);
+        }
+
+        .color-swatch {
+            display: inline-block;
+            width: 100px;
+            height: 100px;
+            border-radius: var(--radius-md);
+            margin-right: var(--space-4);
+            box-shadow: var(--shadow-md);
+        }
+
+        .color-label {
+            display: block;
+            margin-top: var(--space-2);
+            font-size: var(--text-sm);
+            font-weight: 600;
+        }
+
+        .typography-sample {
+            margin-bottom: var(--space-6);
+            padding: var(--space-4);
+            background-color: var(--summa-lightgrey);
+            border-radius: var(--radius-md);
+        }
+
+        .hero {
+            background: linear-gradient(135deg, var(--summa-indigo) 0%, #3d2b8f 100%);
+            color: var(--summa-white);
+            padding: var(--space-20) 0;
+            border-radius: var(--radius-xl);
+            text-align: center;
+            margin-bottom: var(--space-16);
+        }
+
+        .hero h1 {
+            color: var(--summa-white);
+            margin-bottom: var(--space-4);
+        }
+
+        .hero p {
+            font-size: var(--text-xl);
+            max-width: 600px;
+            margin: 0 auto var(--space-8);
+        }
+
+        .component-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--space-6);
+            margin-top: var(--space-8);
+        }
+
+        .radius-demo {
+            display: inline-block;
+            padding: var(--space-6);
+            background-color: var(--summa-indigo);
+            color: var(--summa-white);
+            margin: var(--space-2);
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <!-- Skip link voor toegankelijkheid -->
+    <a href="#main-content" class="skip-link">Spring naar hoofdinhoud</a>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="flex items-center justify-between">
+                <img src="assets/SUMMA_Logo_RGB_Indigo.png" alt="Summa" class="summa-logo-sm">
+                <ul class="nav-list">
+                    <li><a href="#kleuren" class="nav-link">Kleuren</a></li>
+                    <li><a href="#typografie" class="nav-link">Typografie</a></li>
+                    <li><a href="#componenten" class="nav-link">Componenten</a></li>
+                    <li><a href="#logo" class="nav-link">Logo</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main id="main-content">
+        <!-- Hero Section -->
+        <div class="container">
+            <div class="hero">
+                <img src="assets/SUMMA_Logo_RGB_Wit.png" alt="Summa" class="summa-logo">
+                <h1>Samen kun je meer.</h1>
+                <p>Welkom bij de Summa Huisstijl Demo. Deze pagina toont alle huisstijl elementen volgens het officiële handboek van februari 2026.</p>
+                <div class="flex gap-4 justify-center">
+                    <button class="btn btn-secondary">Meer informatie</button>
+                    <button class="btn btn-primary" style="background: white; color: var(--summa-indigo);">Contact</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Kleuren Sectie -->
+        <section id="kleuren" class="section">
+            <div class="container">
+                <div class="demo-section">
+                    <h2 class="demo-heading">Kleuren</h2>
+
+                    <h3>Primaire Kleuren</h3>
+                    <div class="flex gap-6 mt-4 mb-8">
+                        <div>
+                            <div class="color-swatch" style="background-color: #20126E;"></div>
+                            <span class="color-label">Indigo</span>
+                            <div style="font-size: var(--text-sm); color: rgba(var(--summa-indigo-rgb), 0.7);">
+                                #20126E<br>
+                                RGB 32, 18, 110
+                            </div>
+                        </div>
+                        <div>
+                            <div class="color-swatch" style="background-color: #FFFFFF; border: 1px solid #ddd;"></div>
+                            <span class="color-label">Wit</span>
+                            <div style="font-size: var(--text-sm); color: rgba(var(--summa-indigo-rgb), 0.7);">
+                                #FFFFFF<br>
+                                RGB 255, 255, 255
+                            </div>
+                        </div>
+                        <div>
+                            <div class="color-swatch" style="background-color: #F4F4F4;"></div>
+                            <span class="color-label">Lichtgrijs</span>
+                            <div style="font-size: var(--text-sm); color: rgba(var(--summa-indigo-rgb), 0.7);">
+                                #F4F4F4<br>
+                                RGB 244, 244, 244
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card card-indigo">
+                        <h3 style="color: white;">Contrast Richtlijnen</h3>
+                        <p>Voor online publicaties is voldoende contrast cruciaal. Minimaal contrast ratio:</p>
+                        <ul style="list-style-position: inside;">
+                            <li><strong>4.5:1</strong> voor normale tekst (WCAG AA)</li>
+                            <li><strong>3:1</strong> voor grote tekst (&ge;18pt of &ge;14pt bold)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Typografie Sectie -->
+        <section id="typografie" class="section bg-lightgrey">
+            <div class="container">
+                <div class="demo-section">
+                    <h2 class="demo-heading">Typografie</h2>
+
+                    <div class="typography-sample">
+                        <h4>Primair Font: Myriad Pro</h4>
+                        <p style="font-family: var(--font-primary);">
+                            Gebruikt voor body tekst, praktische informatie en functionele teksten.
+                            Fallback: Open Sans voor web-safe compatibiliteit.
+                        </p>
+                        <p style="font-family: var(--font-primary); font-size: var(--text-sm);">
+                            ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>
+                            abcdefghijklmnopqrstuvwxyz<br>
+                            0123456789
+                        </p>
+                    </div>
+
+                    <div class="typography-sample">
+                        <h4>Secundair Font: Bitter</h4>
+                        <p style="font-family: var(--font-secondary); font-weight: 700; font-size: var(--text-xl);">
+                            Gebruikt voor koppen en quotes met meer nadruk.
+                            Fallback: Amasis Bold of Georgia.
+                        </p>
+                        <p style="font-family: var(--font-secondary); font-size: var(--text-sm);">
+                            ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>
+                            abcdefghijklmnopqrstuvwxyz<br>
+                            0123456789
+                        </p>
+                    </div>
+
+                    <h3 class="mt-8">Koppen Hiërarchie</h3>
+                    <h1>Heading 1 - Bitter 48px</h1>
+                    <h2>Heading 2 - Bitter 40px</h2>
+                    <h3>Heading 3 - Bitter 32px</h3>
+                    <h4>Heading 4 - Bitter 24px</h4>
+                    <h5>Heading 5 - Bitter 20px</h5>
+                    <h6>Heading 6 - Bitter 18px</h6>
+
+                    <blockquote class="mt-8">
+                        Dit is een quote met Bitter font. Quotes gebruiken het secundaire font voor extra nadruk en zijn voorzien van indigo accent.
+                    </blockquote>
+                </div>
+            </div>
+        </section>
+
+        <!-- Componenten Sectie -->
+        <section id="componenten" class="section">
+            <div class="container">
+                <div class="demo-section">
+                    <h2 class="demo-heading">Componenten</h2>
+
+                    <h3>Buttons</h3>
+                    <div class="flex gap-4 mb-8 mt-4">
+                        <button class="btn btn-primary">Primaire Knop</button>
+                        <button class="btn btn-secondary">Secundaire Knop</button>
+                        <button class="btn btn-primary btn-lg">Grote Knop</button>
+                        <button class="btn btn-primary btn-sm">Kleine Knop</button>
+                    </div>
+
+                    <h3>Cards</h3>
+                    <div class="component-grid">
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="card-title">Standaard Card</h3>
+                            </div>
+                            <div class="card-body">
+                                <p>Cards gebruiken afgeronde hoeken volgens de formule: radius = korte zijde / 50.</p>
+                                <div class="card-inner">
+                                    <strong>Nested element</strong> gebruikt 0.8x de radius voor consistentie.
+                                </div>
+                            </div>
+                            <div class="card-footer">
+                                <button class="btn btn-primary">Lees meer</button>
+                            </div>
+                        </div>
+
+                        <div class="card card-indigo">
+                            <div class="card-header">
+                                <h3 class="card-title">Indigo Card</h3>
+                            </div>
+                            <div class="card-body">
+                                <p>Cards op indigo achtergrond gebruiken witte tekst voor optimaal contrast (WCAG AA compliant).</p>
+                            </div>
+                            <div class="card-footer">
+                                <button class="btn btn-secondary">Ontdek meer</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h3 class="mt-8">Forms</h3>
+                    <div style="max-width: 500px;">
+                        <div class="form-group">
+                            <label class="form-label" for="name">Naam</label>
+                            <input type="text" id="name" class="form-input" placeholder="Jouw naam">
+                            <div class="form-help">Voer je volledige naam in</div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label" for="email">E-mail</label>
+                            <input type="email" id="email" class="form-input" placeholder="naam@voorbeeld.nl">
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label" for="message">Bericht</label>
+                            <textarea id="message" class="form-textarea" placeholder="Jouw bericht..."></textarea>
+                        </div>
+
+                        <button class="btn btn-primary">Verstuur</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Afgeronde Hoeken Demo -->
+        <section class="section bg-lightgrey">
+            <div class="container">
+                <div class="demo-section">
+                    <h2 class="demo-heading">Afgeronde Hoeken (Border Radius)</h2>
+
+                    <p><strong>Formule:</strong> radius = korte zijde / 50 | vlak-in-vlak = radius × 0.8</p>
+
+                    <div class="mt-8">
+                        <h4>Praktische Voorbeelden:</h4>
+                        <div class="flex gap-4 mt-4" style="flex-wrap: wrap;">
+                            <div class="radius-demo" style="border-radius: 4px; width: 200px; height: 150px;">
+                                <strong>Small</strong><br>
+                                4px radius<br>
+                                (200px breed)
+                            </div>
+                            <div class="radius-demo" style="border-radius: 8px; width: 400px; height: 150px;">
+                                <strong>Medium</strong><br>
+                                8px radius<br>
+                                (400px breed)
+                            </div>
+                            <div class="radius-demo" style="border-radius: 16px; width: 600px; height: 200px;">
+                                <strong>Large</strong><br>
+                                16px radius<br>
+                                (600px breed, 200px hoog → 200/50 = 4px, maar visueel aangepast naar 16px)
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Logo & Vignet Sectie -->
+        <section id="logo" class="section">
+            <div class="container">
+                <div class="demo-section">
+                    <h2 class="demo-heading">Logo & Vignet</h2>
+
+                    <div class="grid grid-cols-2 gap-6">
+                        <div class="card">
+                            <h3>Logo op Lichte Achtergrond</h3>
+                            <div class="text-center" style="padding: var(--space-8); background: white;">
+                                <img src="assets/SUMMA_Logo_RGB_Indigo.png" alt="Summa Logo Indigo" class="summa-logo">
+                            </div>
+                            <p class="mt-4"><strong>Bestand:</strong> SUMMA_Logo_RGB_Indigo.png</p>
+                            <p><strong>Gebruik:</strong> Op witte of lichte achtergronden</p>
+                        </div>
+
+                        <div class="card card-indigo">
+                            <h3>Logo op Donkere Achtergrond</h3>
+                            <div class="text-center" style="padding: var(--space-8);">
+                                <img src="assets/SUMMA_Logo_RGB_Wit.png" alt="Summa Logo Wit" class="summa-logo">
+                            </div>
+                            <p class="mt-4"><strong>Bestand:</strong> SUMMA_Logo_RGB_Wit.png</p>
+                            <p><strong>Gebruik:</strong> Op indigo of donkere achtergronden</p>
+                        </div>
+
+                        <div class="card">
+                            <h3>Vignet (Compact Beeldmerk)</h3>
+                            <div class="flex items-center gap-4" style="padding: var(--space-4);">
+                                <img src="assets/SUMMA_Vignet_indigo_RGB.png" alt="Summa Vignet" class="summa-vignet-sm">
+                                <img src="assets/SUMMA_Vignet_indigo_RGB.png" alt="Summa Vignet" class="summa-vignet">
+                                <img src="assets/SUMMA_Vignet_indigo_RGB.png" alt="Summa Vignet" class="summa-vignet-lg">
+                            </div>
+                            <p class="mt-4"><strong>Gebruik:</strong> Avatars, icons, kleine hoektoepassing, grid-elementen</p>
+                            <p><strong>Formaten:</strong> 32px, 48px, 64px</p>
+                        </div>
+
+                        <div class="card card-indigo">
+                            <h3>Vignet Wit Variant</h3>
+                            <div class="flex items-center gap-4" style="padding: var(--space-4);">
+                                <img src="assets/SUMMA_Vignet_wit_RGB.png" alt="Summa Vignet Wit" class="summa-vignet-sm">
+                                <img src="assets/SUMMA_Vignet_wit_RGB.png" alt="Summa Vignet Wit" class="summa-vignet">
+                                <img src="assets/SUMMA_Vignet_wit_RGB.png" alt="Summa Vignet Wit" class="summa-vignet-lg">
+                            </div>
+                            <p class="mt-4"><strong>Gebruik:</strong> Avatars, icons op donkere achtergrond</p>
+                        </div>
+                    </div>
+
+                    <div class="card mt-8" style="background: linear-gradient(135deg, #20126E 0%, #3d2b8f 50%, #5a4db8 100%); color: white;">
+                        <h3 style="color: white;">Logo Richtlijnen</h3>
+                        <ul style="list-style-position: inside; line-height: var(--leading-relaxed);">
+                            <li>Gebruik uitsluitend indigo of wit - geen andere kleuren</li>
+                            <li>Indigo logo op lichte achtergronden</li>
+                            <li>Wit logo op donkere/verzadigde achtergronden</li>
+                            <li>Geen effecten: geen schaduwen, borders, outlines</li>
+                            <li>Respecteer minimale afmetingen en vrije ruimte</li>
+                            <li>Vignet als compact alternatief waar logo niet past</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pay off Sectie -->
+        <section class="section bg-lightgrey">
+            <div class="container text-center">
+                <h2 class="demo-heading">Pay Off</h2>
+                <div class="flex justify-center gap-6 mt-8" style="flex-wrap: wrap;">
+                    <div class="summa-payoff">
+                        Samen<br>kun je<br>meer.
+                    </div>
+                    <div class="summa-payoff-inverted">
+                        Samen<br>kun je<br>meer.
+                    </div>
+                </div>
+                <p class="mt-8" style="max-width: 600px; margin-left: auto; margin-right: auto;">
+                    <strong>Let op:</strong> Gebruik de pay off alleen wanneer deze in de uiting nodig is.
+                    Combineer niet automatisch met het logo.
+                </p>
+            </div>
+        </section>
+
+        <!-- Microregels Sectie -->
+        <section class="section">
+            <div class="container">
+                <div class="demo-section">
+                    <h2 class="demo-heading">Microregels</h2>
+
+                    <div class="card">
+                        <h3>Telefoonnummer Notatie</h3>
+                        <p>Telefoonnummers altijd met spaties, <strong>zonder streepjes</strong>:</p>
+                        <div style="background: var(--summa-lightgrey); padding: var(--space-4); border-radius: var(--radius-md); font-family: monospace; margin-top: var(--space-4);">
+                            <div style="color: green;">✓ Correct: 040 269 4000</div>
+                            <div style="color: red;">✗ Fout: 040-269-4000</div>
+                            <div style="color: red;">✗ Fout: 0402694000</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Grid Demo -->
+        <section class="section bg-indigo">
+            <div class="container">
+                <h2 class="demo-heading" style="color: white; border-bottom-color: white;">Grid Systeem</h2>
+
+                <div class="grid grid-cols-3 mt-8">
+                    <div class="card">
+                        <h4>Kolom 1</h4>
+                        <p>Het grid systeem past automatisch aan op mobiele apparaten.</p>
+                    </div>
+                    <div class="card">
+                        <h4>Kolom 2</h4>
+                        <p>Responsive design is ingebouwd met mobile-first benadering.</p>
+                    </div>
+                    <div class="card">
+                        <h4>Kolom 3</h4>
+                        <p>Op kleine schermen worden alle kolommen onder elkaar geplaatst.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-indigo" style="padding: var(--space-12) 0; margin-top: var(--space-20);">
+        <div class="container">
+            <div class="flex justify-between items-center" style="flex-wrap: wrap; gap: var(--space-6);">
+                <div>
+                    <img src="assets/SUMMA_Logo_RGB_Wit.png" alt="Summa" class="summa-logo-sm">
+                    <div class="summa-payoff-inverted mt-4">
+                        Samen<br>kun je<br>meer.
+                    </div>
+                </div>
+                <div style="color: white;">
+                    <h4 style="color: white; margin-bottom: var(--space-4);">Contact</h4>
+                    <p>Summa College</p>
+                    <p>040 269 4000</p>
+                    <p>info@summa.nl</p>
+                </div>
+                <div style="color: white;">
+                    <h4 style="color: white; margin-bottom: var(--space-4);">Huisstijl</h4>
+                    <p>Versie: Februari 2026</p>
+                    <p>CSS Framework: summa-styles.css</p>
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: var(--space-12); padding-top: var(--space-6); border-top: 1px solid rgba(255,255,255,0.2); color: white;">
+                <p>&copy; 2026 Summa College. Alle rechten voorbehouden.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

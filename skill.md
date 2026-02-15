@@ -1,3 +1,13 @@
+---
+name: huisstijl-summa
+description: Past de Summa huisstijl toe op documenten, visuals en code volgens het Huisstijlhandboek (versie februari 2026). Start altijd met een robuuste intake met korte keuzecodes zodat terminal-selecties leesbaar blijven.
+license: MIT
+compatibility: Werkt in chat- en terminal-omgevingen. Ontworpen voor buggy selectie-UI's door korte opties en een type-fallback.
+metadata:
+  version: "1.0.0"
+  author: Summa College
+---
+
 # Huisstijl Summa
 
 ## Description
@@ -12,34 +22,126 @@ Roep aan met `/huisstijl-summa` om de Summa huisstijl toe te passen.
 
 Je bent een expert in het toepassen van de Summa huisstijl. Je werkt strikt volgens het huisstijlhandboek en kiest bij twijfel voor consistentie, leesbaarheid en toegankelijkheid.
 
-Wanneer deze skill wordt aangeroepen:
+### Belangrijk voor terminal-selecties
+Aan het begin moeten mensen keuzes kunnen maken. Terminal-selecties kunnen slecht wrappen, afkappen of bugs hebben. Daarom:
 
-1. Inventariseer het bestand en het doel
-   - Vraag welk type bestand het is (bijv. Word, PowerPoint, PDF, webpagina, social visual, infographic, code repository).
-   - Vraag waar het voor gebruikt wordt (corporate, schoolniveau, campagne, intern, extern).
-   - Vraag waar het gepubliceerd wordt (print, web, socials, intranet), omdat contrast en toegankelijkheid dan zwaar meewegen.
+- Gebruik korte keuzecodes (A, B, C of 1, 2, 3).
+- Houd labels kort, maximaal ongeveer 30 tekens.
+- Stel één vraag per beurt.
+- Voeg altijd een "TYPE" fallback toe waarmee de gebruiker codes in één regel typt.
+- Gebruik geen geneste bullets als selectie-items.
 
-2. Verzamel de huisstijlkeuzes die toegepast moeten worden
-   Vraag expliciet welke onderdelen de gebruiker wil laten toepassen:
-   - Kleurenschema en eventuele kleurcombinatie met verloop
-   - Typografie (koppen, body, quotes)
-   - Logo en pay off
-   - Vignet (beeldmerk) als compacte merkdrager
-   - Vormtaal (afgeronde hoeken)
-   - Fotografie en beeldniveau
-   - Iconen
-   - Grafieken, schema’s en tabellen
-   - Microregels zoals telefoonnummer-notatie
+---
 
-3. Pas de huisstijl toe
-   - Werk iteratief. Eerst structuur, kleur en typografie. Daarna logo, pay off, vignet en details.
-   - Maak keuzes op basis van contrast en toepassing. Voorkom decoratief gebruik dat de leesbaarheid of rust schaadt.
-   - Gebruik alleen officiële assets en vaste kleurwaarden.
+## Startflow
+Volg altijd deze intake, in exact deze volgorde. Varieer niet in de layout van de keuzes.
 
-4. Lever output en leg uit
-   - Geef per onderdeel een korte changelog met concrete instellingen (hex of RGB, fonts, grootte, radius, marges).
-   - Leg afwijkingen uit. Bijvoorbeeld technische beperkingen of toegankelijkheidseisen.
-   - Voeg een checklist toe waarmee de gebruiker het eindresultaat kan nalopen.
+### Stap 0. Input-mode
+Vraag:
+
+KIES INPUT-MODE:
+1) SELECT. Ik kies per vraag  
+2) TYPE. Ik typ codes in één regel
+
+Regels:
+- Als de gebruiker niets kiest of de selector kapot is, ga naar modus 2.
+- Als modus 2 gekozen is, ga direct naar "Handmatige invulmodus".
+
+### Stap 1. Bestandstype
+Vraag:
+
+BESTANDSTYPE:
+A) WORD  
+B) PPT  
+C) PDF  
+D) WEB  
+E) VISUAL  
+F) CODE  
+G) ANDERS
+
+Regels:
+- Als G, vraag één korte specificatie in één regel. Voorbeeld: "InDesign flyer" of "Excel dashboard".
+
+### Stap 2. Gebruik
+Vraag:
+
+GEBRUIK:
+A) CORPORATE  
+B) SCHOOL  
+C) CAMPAGNE  
+D) INTERN  
+E) EXTERN
+
+### Stap 3. Kanaal
+Vraag:
+
+KANAAL:
+A) PRINT  
+B) WEB  
+C) SOCIALS  
+D) INTRANET  
+E) PRESENTATIE
+
+Regels:
+- Kanaal beïnvloedt contrast en toegankelijkheid. Bij WEB en SOCIALS gelden strengere contrastkeuzes.
+
+### Stap 4. Onderdelen
+Vraag:
+
+ONDERDELEN. KIES 1 OF MEER. VOER CODES IN ZONDER SPATIES, BIJV. ABCFIJ:
+A) KLEUR  
+B) TYPO  
+C) LOGO  
+D) PAYOFF  
+E) VIGNET  
+F) VORMTAAL  
+G) FOTO  
+H) ICONEN  
+I) GRAFIEK  
+J) MICROREGELS
+
+Regels:
+- Als de gebruiker "alles" bedoelt, behandel dat als A t/m J.
+- Als de gebruiker niets kiest, ga uit van A, B, C (kleur, typo, logo).
+
+---
+
+## Handmatige invulmodus (modus 2)
+Als SELECT niet goed leesbaar is, gebruik één regel met deze syntax. Parse en bevestig de interpretatie.
+
+FORMAT:
+TYPE=<A-G>;GEBR=<A-E>;KAN=<A-E>;OND=<letters>
+
+VOORBEELD:
+TYPE=B;GEBR=E;KAN=E;OND=ABCFIJ
+
+Regels:
+- Hoofdletters verplicht.
+- Onbekende codes negeren en terugmelden.
+- Als OND leeg is, ga uit van A, B, C.
+- Als TYPE ontbreekt, vraag opnieuw alleen TYPE.
+- Als GEBR of KAN ontbreekt, vraag alleen het ontbrekende veld opnieuw.
+
+---
+
+## Werkwijze: huisstijl toepassen
+Werk iteratief en rapporteer per stap. Gebruik deze vaste volgorde:
+
+1) Structuur en grid  
+2) Kleur (achtergronden, vlakken, contrast)  
+3) Typografie (koppen, body, quotes, fallbacks)  
+4) Logo, payoff, vignet (variant op basis van achtergrond)  
+5) Vormtaal (radius, marges)  
+6) Beeld en fotografie-keuzes  
+7) Iconen  
+8) Grafieken, schema’s en tabellen  
+9) Microregels
+
+Regels:
+- Voorkom decoratief gebruik dat leesbaarheid of rust schaadt.
+- Gebruik alleen officiële assets en vaste kleurwaarden.
+- Als iets niet kan door softwarebeperkingen, kies de dichtstbijzijnde huisstijl-conforme fallback en noteer dit in de changelog.
+- Bij twijfel kies je de meest toegankelijke optie met voldoende contrast en heldere hiërarchie.
 
 ---
 
@@ -100,12 +202,12 @@ In de `assets` map staan de officiële bestanden die je mag gebruiken:
 #### Implementatiestappen in deze skill
 Wanneer de gebruiker om logo of vignet vraagt, of wanneer een document een merkdrager nodig heeft:
 
-1. Bepaal achtergrondtype per plaatsing
-   - Licht. Gebruik indigo logo of indigo vignet.
-   - Donker of verzadigd. Gebruik wit logo of wit vignet.
-2. Controleer vrije ruimte en minimale afmetingen
-   - Als dit niet haalbaar is met het logo, kies het vignet of vergroot de plaatsing.
-3. Rapporteer in de changelog
+1) Bepaal achtergrondtype per plaatsing  
+   - Licht. Gebruik indigo logo of indigo vignet.  
+   - Donker of verzadigd. Gebruik wit logo of wit vignet.  
+2) Controleer vrije ruimte en minimale afmetingen  
+   - Als dit niet haalbaar is met het logo, kies het vignet of vergroot de plaatsing.  
+3) Rapporteer in de changelog  
    - Noem exact welk bestand is gebruikt en waar het is geplaatst.
 
 ### Afgeronde hoeken
@@ -141,13 +243,30 @@ Wanneer de gebruiker om logo of vignet vraagt, of wanneer een document een merkd
 ## Output format
 
 Lever altijd:
-1. Samenvatting van het doel en het bestandsformaat
-2. Toegepaste keuzes per onderdeel (kleur, typografie, logo, vignet, beeld, iconen, grafieken)
-3. Changelog met concrete waarden en gebruikte assets
-4. Checklist voor validatie:
-   - Contrast en leesbaarheid
-   - Correcte fonts of fallbacks
-   - Correcte logo of vignet variant op basis van achtergrond
-   - Vrije ruimte en minimale afmetingen
-   - Consistente afgeronde hoeken
-   - Geen niet-toegestane effecten of alternatieve kleurvarianten
+
+1) Samenvatting  
+- Doel, bestandstype, gebruik, kanaal  
+- Gekozen onderdelen (met codes A t/m J) en korte motivatie
+
+2) Toegepaste keuzes per onderdeel  
+- Kleur: gebruikte kleuren en contrastkeuze per achtergrond  
+- Typografie: fonts, groottes, hiërarchie, fallbacks  
+- Logo, payoff, vignet: gekozen variant en plaatsing  
+- Vormtaal: radius, marges, grid  
+- Beeld en iconen: stijlkeuzes en bronnen  
+- Grafieken en tabellen: assen, kleuren, afronding  
+- Microregels: concrete notatie-afspraken
+
+3) Changelog met concrete waarden  
+- Hex of RGB waarden  
+- Fontnamen en vervangers  
+- Groottes, marges, radius  
+- Gebruikte assets met pad en locatie in het document
+
+4) Checklist voor validatie  
+- Contrast en leesbaarheid  
+- Correcte fonts of fallbacks  
+- Correcte logo of vignet variant op basis van achtergrond  
+- Vrije ruimte en minimale afmetingen  
+- Consistente afgeronde hoeken  
+- Geen niet-toegestane effecten of alternatieve kleurvarianten
