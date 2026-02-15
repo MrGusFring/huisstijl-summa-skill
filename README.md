@@ -7,7 +7,7 @@ Deze custom skill helpt bij het toepassen van de Summa huisstijl.
 ### Via GitHub
 ```bash
 cd ~/.claude/skills
-git clone https://github.com/JOUW-USERNAME/huisstijl-summa-skill.git huisstijl-summa
+git clone https://github.com/MrGusFring/huisstijl-summa-skill.git huisstijl-summa
 ```
 
 ### Via download
