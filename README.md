@@ -1,6 +1,6 @@
 # Huisstijl Summa Skill
 
-Complete Summa huisstijl implementatie met CSS framework, component bibliotheek en demo's volgens het officiële Huisstijlhandboek (versie februari 2026).
+Complete Summa huisstijl implementatie volgens het officiële Huisstijlhandboek (versie februari 2026).
 
 ## 📦 Installatie
 
