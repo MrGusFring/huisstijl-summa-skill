@@ -45,39 +45,6 @@ De skill helpt je met:
     └── SUMMA_Vignet_wit_RGB.png        # Vignet (compact) voor donkere achtergronden
 ```
 
-## 🎨 Wat zit erin?
-
-## 🎨 Belangrijkste Huisstijl Regels
-
-### Kleuren
-- **Primair:** Indigo `#20126E`
-- **Neutraal:** Wit `#FFFFFF`, Lichtgrijs `#F4F4F4`
-- **Online contrast:** Minimaal 4.5:1 voor tekst (WCAG AA)
-
-### Typografie
-- **Body:** Myriad Pro (fallback: Open Sans)
-- **Koppen:** Bitter Bold (fallback: Georgia)
-- **Instellingen:** Letter-spacing metrisch, geen ligaturen
-
-### Logo
-- **Lichte achtergrond:** Indigo variant
-- **Donkere achtergrond:** Witte variant
-- **Geen effecten:** Geen schaduwen, borders, of kleurvarianten
-
-### Afgeronde Hoeken
-- **Formule:** `radius = korte zijde / 50`
-- **Vlak-in-vlak:** `radius × 0.8`
-
-### Telefoonnummers
-- **Format:** `040 269 4000` (met spaties, zonder streepjes)
-
-## 📚 Resources
-
-- **Demo bekijken:** Open `demo.html` in je browser
-- **Componenten:** Bekijk `components.html` voor code voorbeelden
-- **Snelle referentie:** Check `QUICK_REFERENCE.md`
-- **Skill gebruiken:** Roep `/huisstijl-summa` aan in Claude Code
-
 ## ✅ Implementatie Checklist
 
 Voordat je live gaat:
@@ -93,31 +60,4 @@ Voordat je live gaat:
 - [ ] Responsive design getest op mobiel
 - [ ] Prefers-reduced-motion gerespecteerd
 
-## 💡 Tips voor Ontwikkelaars
-
-1. **Begin met de demo:** Open `demo.html` om te zien wat mogelijk is
-2. **Kopieer componenten:** Gebruik `components.html` als startpunt
-3. **CSS Variabelen:** Gebruik altijd `var(--summa-indigo)` etc. voor consistentie
-4. **Logo keuze:** Lichte achtergrond = indigo, donkere achtergrond = wit
-5. **Vignet gebruiken:** Voor compacte ruimtes waar het logo niet past
-6. **Test toegankelijkheid:** Gebruik browser dev tools voor contrast checks
-7. **Mobile first:** Test altijd op verschillende schermen
-
-## 🔧 Aanpassen
-
-Het framework is volledig customizable via CSS variabelen in `summa-styles.css`.
-
-Wil je de skill instructies aanpassen?
-1. Open `skill.md`
-2. Pas de instructies aan
-3. Test met `/huisstijl-summa`
-
-## 📞 Support
-
-- **GitHub Issues:** Report bugs of vraag features aan
-- **Documentatie:** Raadpleeg het Summa Huisstijlhandboek (februari 2026)
-- **Claude Code:** Gebruik `/huisstijl-summa` voor interactieve hulp
-
-## 📄 Licentie
-
-Deze skill en assets zijn eigendom van Summa College. Gebruik alleen voor Summa-gerelateerde projecten.
+Gemaakt door MONA / V1.0 / SUMMA
